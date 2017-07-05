@@ -1,0 +1,126 @@
+.btn,
+.btn:focus,
+.btn:active,
+input,
+.modal-content {
+  outline: none !important;
+  border-radius: 0 !important;
+}
+button,
+.btn {
+  cursor: pointer !important;
+  -webkit-transition: all .2s !important;
+  transition: all .2s !important;
+}
+h5 {
+  font-weight: 100;
+  font-size: 13px;
+  color: #999;
+}
+body {
+  margin: 0 auto;
+  position: relative;
+  width: 280px;
+  padding: 20px;
+  padding-top: 10px;
+  background: #f4f6ff;
+}
+.page-container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.item {
+  margin-bottom: 10px;
+}
+.field {
+  font-weight: 700;
+}
+.field > span {
+  padding-right: 10px;
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  font-weight: 300;
+}
+
+/*右下角辅助功能*/
+
+.group-auxiliary-box-bar {
+  position: absolute;
+  width: 100%;
+  height: 22px;
+  width: 30px;
+  right: 20px;
+  bottom: 22px;
+}
+.group-auxiliary-box {
+  position: absolute;
+  right: 0;
+}
+
+/*输入文本框*/
+
+.inp-line-info {
+  font-weight: 700;
+}
+
+/*线路列表信息*/
+
+.line-box {
+  padding: 15px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #EEE;
+  font-weight: 700;
+}
+.line-box span {
+  font-weight: 300;
+}
+.line-box:last-child {
+  border-bottom: none;
+}
+.line-box p {
+  margin: 0;
+}
+
+
+/* 添加/移出当前URL */
+.op-current-url{
+	position: relative;
+}
+.op-current-url .icon-box{
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	height: 38px;
+	width: 38px;
+	text-align: center;
+	line-height: 42px;
+	font-size: 18px;
+}
+
+/* made by */
+.made-by,
+.made-by a{
+	color: #CCC;
+  font-weight: 100;
+  font-size: 12px;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+.made-by{
+	margin-top: 20px;
+	height: 26px;
+	line-height: 26px;
+}
+.made-by a:hover{
+	color: #8a9fff;
+}
+
+/* debug-line  */
+.debug-line{
+	display: none;
+}
