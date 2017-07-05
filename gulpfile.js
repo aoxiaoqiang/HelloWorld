@@ -7,7 +7,7 @@ var minifyCss = require('gulp-minify-css') // 压缩 CSS
 var htmlmin = require('gulp-htmlmin') // 压缩HTML
 
 var root = 'hello-world-proxy' // 当前根目录
-var targetDir = 'tag/0.0.1/hello-world-proxy-0.0.1' // 目标生成目录
+var targetDir = 'tag/1.0.0/hello-world-proxy-1.0.0' // 目标生成目录
 
 // CSS添加前缀/压缩
 gulp.task('css', function() {
