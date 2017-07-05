@@ -1,23 +1,25 @@
-#yuyue_chrome
+## Getting Start
+[下载地址](https://chrome.google.com/webstore/detail/helloworld/bcllbnjmijlnlhiekkjhocliopkemkdd)
 
-AppId
-ankocpbbephifcjcifflndpojplnpmba
-
-Key
+## Chrome Extension Info
+1. AppId: **`bcllbnjmijlnlhiekkjhocliopkemkdd`**
+2. Key
+```
 -----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlVPwLAqKkF6BHRk3k11l
-6bpAGxOg4t3i61CpjhsEI21JFs00NPNTFQz5lIw7ODn3D32IAUsvf3S5IKnXULYR
-YkFOR0HzNW/kUn6jm2HNtBTL8Bp/X0uJBYcQAzb/8n/G2RIsa189ZfPWvy7PTVaA
-Pw88FU5IEhxUBW49vC2qrLk6a4wLAJWI5dnvi2rcgeOGoplJuSAeSHRQjYvTuHPX
-93NYkv+xmEEmJvjrVAZdTnnnOOSvBGXA2y8JLTXf6gSLgoNPtzpOJjfkcvrtZ+ol
-0KeUHi+hCuJwWN05ttMeTUl1mWjoUvSjL6jrsuyw5ldR9QsUEhz2P2x/sgG1s91C
-SwIDAQAB
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4ce59pDk7iwJ8hJFfqcN
+Udg7iRBleNcvIr3EsUFKqgLCuo1i3X7WpUwg0SqhX18wihiMLRlWfiywyNBXfOT5
+OAI/A4qzInCy5UFIep5Z+lrei/rjmNChlFTDtgvmwhDkJSPK+r6fhyiPaokU6clB
+APGN8VnYVnkKiTtFvxBwMUS2zK9qKGp/Eb/hUcmF9X+EvfT11jLUXwSEuNYXpeg5
+B1S/QkHr3+VlBl4K9aEJthUKUfCJF7hYYPPDEeeVLACdqLS/5ZzHePV33XKiKezc
+/p6h/wqnM2/HOsV/hSuz3IVhGyhXn7Fq845iZxEvTLnW5Y2dDqDfqZHXnCJ5AweW
+1wIDAQAB
 -----END PUBLIC KEY-----
+```
 
-add new account
+## Version Update
+#### v1.0.0
++ 完成基本功能，连接开关。可开启关闭连接。
++ 手动填写代理地址。
++ 添加Debug模式。
++ 添加当前URL到代理列表。
 
-1.1.4更新内容
-1. 登录失败，“服务器错误”提示修改。
-2. 在线状态，可“退出”。
-3. “退出”接口不管返回值，都可以退出。
-4. “全局模式”线路切换卡死。
