@@ -1,11 +1,10 @@
-## Getting Start
-[下载地址](https://chrome.google.com/webstore/detail/helloworld/bcllbnjmijlnlhiekkjhocliopkemkdd)
-
 ## Chrome Extension 基本信息
-1. Chrome [商店URL](https://chrome.google.com/webstore/detail/hello-world-proxy/bcllbnjmijlnlhiekkjhocliopkemkdd)
+
+1. [Chrome 网上应用店URL](https://chrome.google.com/webstore/detail/hello-world-proxy/bcllbnjmijlnlhiekkjhocliopkemkdd)
 2. Extension ID: **`bcllbnjmijlnlhiekkjhocliopkemkdd`**
 
 ## 使用方法
+
 1. 下载插件
 	+ 打开浏览器，在地址栏输入 **[http://chrome-extension-downloader.com/](http://chrome-extension-downloader.com/)** 并打开目标页面。
 	+ 在页面中输入 extension ID：**`bcllbnjmijlnlhiekkjhocliopkemkdd`** ，然后点击下载。
@@ -22,7 +21,8 @@
 
 
 
-## Version Update
+## 版本更新
+
 #### v1.0.0
 + 完成基本功能，连接开关。可开启关闭连接。
 + 手动填写代理地址。
