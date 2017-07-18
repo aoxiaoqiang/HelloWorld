@@ -318,13 +318,18 @@ $('#btnAbout').click(function(e) {
 })
 
 // 支持一下
-$('#btnSupport').click(function(e){
+$('#btnSupport-alipay').click(function(e){
   e.preventDefault();
-  payModel();
+  payModel('alipay');
 })
 
-function payModel(){
-  $('#myModal .modal-body').html('<img class="pay-img" src="../images/pay/alipay.jpg" alt="" />');
+$('#btnSupport-wechat').click(function(e){
+  e.preventDefault();
+  payModel('wechat');
+})
+
+function payModel(type){
+  $('#myModal .modal-body').html('<img class="pay-img" src="../images/pay/'+ type +'.jpg" alt="" />');
 
   $('#myModal').modal();
 }

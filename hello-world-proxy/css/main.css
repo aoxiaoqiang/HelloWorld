@@ -62,8 +62,9 @@ body {
 
 .page-title{
   text-align: center;
-  text-shadow: 1px 0 2px #4a8bf5;
-  color: #FFF;
+  // text-shadow: 1px 0 2px #4a8bf5;
+  // color: #FFF;
+  color: #000;
   font-size: 24px;
 }
 
