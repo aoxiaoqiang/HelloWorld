@@ -3,6 +3,8 @@ var proxy = new ChromeProxy();
 
 var customRules = getStorage('customRules') || [];
 
+$('#textVersion').text('v' + chrome.runtime.getManifest().version)
+
 // 初始化数据
 $('#lineInfo').val(getStorage('lineInfo') || '')
 $("[name='my-checkbox']").bootstrapSwitch('state', getStorage('state') || false);
@@ -36,14 +38,14 @@ $('#editLine').click(function() {
   if (isDisabled) {
     $('#lineInfo').prop('disabled', false).focus();
     $(this).removeClass('btn-primary').addClass('btn-danger')
-      .text('Save the Line Info');
+      .text('保存线路信息');
 
     // 开启连接
     handleConnect(false);
   } else {
     $('#lineInfo').prop('disabled', true);
     $(this).removeClass('btn-danger').addClass('btn-primary')
-      .text('Edit the Line Info');
+      .text('编辑线路信息');
     // 开启连接
     handleConnect(true);
   }
@@ -68,7 +70,7 @@ function handleConnect(state) {
 
     $('#lineInfo').prop('disabled', true);
     $('#editLine').removeClass('btn-danger').addClass('btn-primary')
-      .text('Edit the Line Info');
+      .text('编辑线路信息');
   } else {
     proxy.close();
     setStorage('state', false)
@@ -96,10 +98,13 @@ initURLstatus();
 // 处理线路URL添加
 function initURLstatus() {
   var $this = $('#btnHandleURL');
-  chrome.tabs.query({ 'active': true }, function(tabs) {
+  chrome.tabs.query({
+    currentWindow: true,
+    'active': true
+  }, function(tabs) {
     var domain = getDomain(tabs[0].url);
     if (domain == false) {
-      $this.text('Not support operations.');
+      $this.text('禁止操作');
       $('.icon-box .glyphicon-ban-circle').parent().show();
       $this.button('reset');
     } else {
@@ -128,7 +133,7 @@ function initURLstatus() {
       log('----' + isIn)
       if (isIn == 'sys') {
         // sys not
-        $this.text('System proxy URL');
+        $this.text('系统代理地址');
         $('.icon-box .glyphicon-ban-circle').parent().show();
       } else {
         if (getStorage('customRules') && getStorage('customRules').length > 0) {
@@ -197,17 +202,17 @@ $('#getInfo').click(function(e) {
     var line = parseLineInfo(getStorage('lineInfo'));
     if (line != 'error') {
       var strHtml = '';
-      strHtml += '<p class="field"><span>Status: </span>' + (line.state == true ? 'Connected' : 'Disconnected') + '</p>';
-      strHtml += '<p class="field"><span>Protocal: </span>' + line.protocal + '</p>';
-      strHtml += '<p class="field"><span>URL: </span>' + line.ip + '</p>';
-      strHtml += '<p class="field"><span>Port: </span>' + line.port + '</p>';
+      strHtml += '<p class="field"><span>连接状态: </span>' + (line.state == true ? 'Connected' : 'Disconnected') + '</p>';
+      strHtml += '<p class="field"><span>协议: </span>' + line.protocal + '</p>';
+      strHtml += '<p class="field"><span>主机地址: </span>' + line.ip + '</p>';
+      strHtml += '<p class="field"><span>端口号: </span>' + line.port + '</p>';
 
       $('#myModal .modal-body').html(strHtml)
     } else {
-      $('#myModal .modal-body').html('Line analytical failure information, please check the line format is correct.The correct line format: <b>HTTP 127.0.0.1:80</b>, pay attention to check whether contains does not conform to the requirements of space.')
+      $('#myModal .modal-body').html('线路信息有误，请检查线路格式是否正确。正确的行格式:<b> HTTP 127.0.0.1:80 </b>，注意检查是否包含不符合要求的空格。')
     }
   } else {
-    $('#myModal .modal-body').html('No agent line information!')
+    $('#myModal .modal-body').html('暂无代理线路信息!')
   }
   $('#myModal').modal();
 })
@@ -217,7 +222,7 @@ $('#newTab').click(function() {
   if (getStorage('debug')) {
     openTab(location.href, true);
   } else {
-    $('#myModal .modal-body').html('Please open the debug mode, then use this function!Open the debug mode method: about -> debug mode.');
+    $('#myModal .modal-body').html('请打开调试模式，然后使用这个函数!打开调试模式方法:“关于” -> “调试模式”。');
     $('#myModal').modal();
   }
 });
@@ -236,7 +241,26 @@ $('#getMoreLine').click(function(e) {
     }
     $('#myModal .modal-body').html(strHtml);
   } catch (e) {
-    $('#myModal .modal-body').html('Failed to get the information!')
+    $('#myModal .modal-body').html('获取线路信息失败，请联系开发者!')
+  }
+  $('#myModal').modal();
+})
+
+// 获取更多线路信息2
+$('#getMoreLine2').click(function(e) {
+  e.preventDefault();
+  try {
+    log(proSuperVPN.get())
+    var lines = proSuperVPN.get();
+    var strHtml = '';
+    for (var i = 0; i < lines.length; i++) {
+      strHtml += '<div class="line-box">';
+      strHtml += '<p><span>' + lines[i]['name'] + ': </span><br/>' + lines[i]['position'] + '</p>';
+      strHtml += '</div>';
+    }
+    $('#myModal .modal-body').html(strHtml);
+  } catch (e) {
+    $('#myModal .modal-body').html('获取线路信息失败，请联系开发者!')
   }
   $('#myModal').modal();
 })
@@ -246,7 +270,7 @@ $('#btnResetPlugin').click(function(e) {
   e.preventDefault();
   window.localStorage.clear();
   proxy.close(function() {
-    $('#myModal .modal-body').html('Reset data success!');
+    $('#myModal .modal-body').html('插件数据重置成功，请重新输入代理服务器信息！');
     $('#myModal').modal();
     $('#myModal').on('hidden.bs.modal', function(e) {
       location.reload();
@@ -266,11 +290,19 @@ $('#btnDisabledPlugin').click(function(e) {
 $('#btnAbout').click(function(e) {
   e.preventDefault();
 
-  $('#myModal .modal-body').html('The program for the exchange of learning how to use only, not for commercial use!<br/><br/>Contact:<br/>QQ: <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2310005831&site=qq&menu=yes">2310005831</a><br/>Email: <a href="mailto:aoxiaoqiang@163.com?subject=The%20extension%20of%20the%20feedback&body=The%20body%20of%20the%20email" id="openEmail">aoxiaoqiang@163.com</a><br/><br/><div class="debugger"><label><input type="checkbox" ' + (getStorage('debug') ? 'checked="checked"' : '') + 'id="debugMode"> Debug mode</label></div>');
+  $('#myModal .modal-body').html('&nbsp;&nbsp;&nbsp;&nbsp;此插件仅供交流学习使用，如果您在使用过程中有问题或更好地建议可以及时联系我们。知识无国界，希望大家能共同成长、共同进步。<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;如果您觉得我们做的不错可以小小的<u class="about-pay">支持一下</u>，有了您的支持我们会走的更远！<br/><br/>联系我们<br/>QQ: <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2310005831&site=qq&menu=yes">2310005831</a><br/>Email: <a href="mailto:aoxiaoqiang@163.com?subject=The%20extension%20of%20the%20feedback&body=The%20body%20of%20the%20email" id="openEmail">aoxiaoqiang@163.com</a><br/><br/><div class="debugger"><label><input type="checkbox" ' + (getStorage('debug') ? 'checked="checked"' : '') + 'id="debugMode"> 调试模式</label></div>');
   // open email tab
   $('#openEmail').click(function(e) {
     e.preventDefault();
     openTab($(this).attr('href'), true);
+  })
+
+  // pay
+  $('.about-pay').click(function(){
+    $('#myModal').modal('hide');
+    setTimeout(function(){
+      payModel();
+    }, 400)
   })
 
   // toggle debug mode
@@ -284,3 +316,15 @@ $('#btnAbout').click(function(e) {
   })
   $('#myModal').modal();
 })
+
+// 支持一下
+$('#btnSupport').click(function(e){
+  e.preventDefault();
+  payModel();
+})
+
+function payModel(){
+  $('#myModal .modal-body').html('<img class="pay-img" src="../images/pay/alipay.jpg" alt="" />');
+
+  $('#myModal').modal();
+}

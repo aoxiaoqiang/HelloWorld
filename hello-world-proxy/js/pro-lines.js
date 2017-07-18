@@ -1,7 +1,6 @@
+// 穹顶穿越
 var tjp = "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ  ;/:'\"!@#$%^&*()1234567890-=+_\\][{}|<>?,./`~";
 var linesUrl = 'https://cdn.lubotv.com/list.js'
-
-// 穹顶穿越
 var proQiong = {
   get: function() {
     var lines = {};
@@ -54,6 +53,36 @@ var proQiong = {
     var that = this
     $.each(ls, function(index, item) {
         item.position = that.jerry(item.position)
+        pLine.push(item)
+      })
+      // console.log(pLine)
+    return pLine
+  }
+}
+
+// 超级VPN
+var superLinesUrl = 'http://api.chrome.shicishe.com/vspn/vspn_get_list'
+var proSuperVPN = {
+  get: function() {
+    var lines = {};
+    $.ajax({
+      url: superLinesUrl,
+      method: 'get',
+      async: false,
+      data: {},
+      success: function(res) {
+        lines = (JSON.parse(res)).list
+      },
+      error: function(res) { log(res) }
+    })
+    return this.handleResponse(lines)
+  },
+  handleResponse: function(ls) {
+    var pLine = []
+    var that = this
+    var pacReg = /\"(.*?)\"/g
+    $.each(ls, function(index, item) {
+        item.position = (item.pacScript.match(pacReg)).toString().replace(/"/g, '')
         pLine.push(item)
       })
       // console.log(pLine)
