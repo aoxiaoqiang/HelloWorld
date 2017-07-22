@@ -229,7 +229,7 @@ $('#newTab').click(function() {
     if (getStorage('debug')) {
         openTab(location.href, true);
     } else {
-        $('#myModal .modal-body').html('请打开调试模式，然后使用这个函数!打开调试模式方法:“关于” -> “调试模式”。');
+        $('#myModal .modal-body').html('请打开调试模式，然后使用这个函数!打开调试模式方法:“关于插件” -> “调试模式”。');
         $('#myModal').modal();
     }
 });
@@ -277,7 +277,7 @@ $('#btnResetPlugin').click(function(e) {
     e.preventDefault();
     window.localStorage.clear();
     proxy.close(function() {
-        $('#myModal .modal-body').html('插件数据重置成功，请重新输服务器信息！');
+        $('#myModal .modal-body').html('插件数据重置成功，请重新配置服务器信息！');
         $('#myModal').modal();
         $('#myModal').on('hidden.bs.modal', function(e) {
             location.reload();
@@ -297,7 +297,7 @@ $('#btnDisabledPlugin').click(function(e) {
 $('#btnAbout').click(function(e) {
     e.preventDefault();
 
-    $('#myModal .modal-body').html('&nbsp;&nbsp;&nbsp;&nbsp;此插件仅供交流学习使用，如果您在使用过程中有问题或更好地建议可以及时联系我们。知识无国界，希望大家能共同成长、共同进步。<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;如果您觉得我们做的不错可以小小的<u class="about-pay">支持一下</u>，有了您的支持我们会走的更远！<br/><br/>联系我们<br/>QQ: <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2310005831&site=qq&menu=yes">2310005831</a><br/>Email: <a href="mailto:aoxiaoqiang@163.com?subject=The%20extension%20of%20the%20feedback&body=The%20body%20of%20the%20email" id="openEmail">aoxiaoqiang@163.com</a><br/><br/><div class="debugger"><label><input type="checkbox" ' + (getStorage('debug') ? 'checked="checked"' : '') + 'id="debugMode"> 调试模式</label></div>');
+    $('#myModal .modal-body').html('<div class="author-say"><i class="glyphicon glyphicon-th"></i> 插件寄语<br/>&nbsp;&nbsp;&nbsp;&nbsp;此插件仅供交流学习使用！<br/>&nbsp;&nbsp;&nbsp;&nbsp;如果您在使用过程中有问题或建议可及时提出。知识无国界，希望大家能共同学习、进步、成长。<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;如果您觉得此插件有帮助到您，您可以小小的<u class="about-pay">支持一下</u>，此插件有了您的支持也许会越来越完善！<br/><br/><i class="glyphicon glyphicon-th"></i> 联系方式<br/>QQ: <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2310005831&site=qq&menu=yes">2310005831</a><br/>Email: <a href="mailto:aoxiaoqiang@163.com?subject=The%20extension%20of%20the%20feedback&body=The%20body%20of%20the%20email" id="openEmail">aoxiaoqiang@163.com</a><div class="debugger"><label><input type="checkbox" ' + (getStorage('debug') ? 'checked="checked"' : '') + 'id="debugMode"></label></div></div>');
     // open email tab
     $('#openEmail').click(function(e) {
         e.preventDefault();
@@ -355,7 +355,7 @@ Conflictor.getConflict(function(extensions) {
         var conflicStr = '';
         conflicStr += '<div class="modal-conflict"><h3 class="conflict-title text-center text-danger">冲突列表</h3>';
         conflicStr += '<div class="conflict-cont">';
-        conflicStr += '<div class="conflict-info text-danger">说明：冲突插件会导致当前插件无法使用, 请及时处理！</div>';
+        conflicStr += '<div class="conflict-info text-danger">说明：冲突插件会导致本插件无法使用, 请及时处理！</div>';
 
         for (var i = 0; i < extensions.length; i++) {
             var item = extensions[i];
