@@ -209,7 +209,7 @@ $('#getInfo').click(function(e) {
         var line = parseLineInfo(getStorage('lineInfo'));
         if (line != 'error') {
             var strHtml = '';
-            strHtml += '<p class="field"><span>连接状态: </span>' + (line.state == true ? 'Connected' : 'Disconnected') + '</p>';
+            strHtml += '<p class="field"><span>连接状态: </span>' + (line.state == true ? '已连接' : '已断开') + '</p>';
             strHtml += '<p class="field"><span>协议: </span>' + line.protocal + '</p>';
             strHtml += '<p class="field"><span>主机地址: </span>' + line.ip + '</p>';
             strHtml += '<p class="field"><span>端口号: </span>' + line.port + '</p>';

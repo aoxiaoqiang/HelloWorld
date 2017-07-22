@@ -75,7 +75,7 @@ function openTab(url, selected) {
 }
 
 // 链接开启新Tab
-$('.openTabLink').click(function(e) {
+$('.openTabLink').on('click', function(e) {
     e.preventDefault();
     openTab($(this).attr('href'), true);
 })
@@ -146,8 +146,8 @@ var Conflictor = {
     disabled: function(id, name) {
         chrome.management.setEnabled(id, false, function() {
             showChromeNotifications({
-              title: 'Chrome插件禁用提醒',
-              message: '"' + name + '" 插件禁用成功!',
+                title: 'Chrome插件禁用提醒',
+                message: '"' + name + '" 插件禁用成功!',
             });
         })
     },
@@ -155,33 +155,31 @@ var Conflictor = {
     uninstall: function(id, name) {
         chrome.management.uninstall(id, function() {
             showChromeNotifications({
-              title: 'Chrome插件卸载提醒',
-              message: '"' + name + '" 插件卸载成功!',
+                title: 'Chrome插件卸载提醒',
+                message: '"' + name + '" 插件卸载成功!',
             });
         })
     }
 }
 
 // 冲突插件个数提示
-function showConflictTips(number){
-  chrome.browserAction.setBadgeText({
-    text: number.toString()
-  })
-  chrome.browserAction.setBadgeBackgroundColor({
-    color: [250, 46, 0, 200]
-  })
+function showConflictTips(number) {
+    chrome.browserAction.setBadgeText({
+        text: number.toString()
+    })
+    chrome.browserAction.setBadgeBackgroundColor({
+        color: [250, 46, 0, 200]
+    })
 }
 
 // 检测展示冲突数量
-function showConflicNumbers(){
-  Conflictor.getConflict(function(extensions){
-    console.log(extensions)
-    var num = extensions.length;
-    if( num === 0){
-      num = '';
-    }
-    showConflictTips(num);
-  })
+function showConflicNumbers() {
+    Conflictor.getConflict(function(extensions) {
+        console.log(extensions)
+        var num = extensions.length;
+        if (num === 0) {
+            num = '';
+        }
+        showConflictTips(num);
+    })
 }
-
-

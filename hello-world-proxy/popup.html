@@ -14,12 +14,12 @@
 
 <body>
     <div class="page-container">
-        <span class="text-version text-left">
-            <a class="base-info-icon pull-right" href="http://aoxiaoqiang.com/HelloWorld/" class="openTabLink" tabindex="-1">
+        <div class="text-version text-left">
+            <span class="base-info-icon pull-right openTabLink" href="http://aoxiaoqiang.com/HelloWorld/">
                 <i class="glyphicon glyphicon-info-sign"></i>
-            </a>
+            </span>
             <strong id="textVersion"></strong>
-        </span>
+        </div>
         <h3 class="text-center page-title">Hello World</h3>
         <!-- Modal -->
         <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -76,12 +76,11 @@
             <i class="glyphicon glyphicon-cog"></i>
           </a>
                 <ul class="dropdown-menu dropdown-menu-right">
-                    <li class="dropdown-header"></li>
                     <li>
-                        <a href="#" id="btnOpenChromeExtensionDev"><i class="glyphicon glyphicon-fullscreen text-success"></i>Chrome扩展程序中心</a>
+                        <a href="#" id="getInfo"><i class="glyphicon glyphicon-info-sign text-success"></i>当前连接线路信息</a>
                     </li>
                     <li>
-                        <a href="#" id="getInfo"><i class="glyphicon glyphicon-info-sign text-success"></i>当前服务器信息</a>
+                        <a href="#" id="btnOpenChromeExtensionDev"><i class="glyphicon glyphicon-fullscreen text-success"></i>Chrome扩展程序</a>
                     </li>
                     <li>
                         <a href="#" id="getMoreLine"><i class="glyphicon glyphicon-circle-arrow-right text-success"></i>线路源1</a>
@@ -90,6 +89,8 @@
                         <a href="#" id="getMoreLine2"><i class="glyphicon glyphicon-circle-arrow-right text-success"></i>线路源2</a>
                     </li>
                     <li role="separator" class="divider"></li>
+
+
                     <li>
                         <a href="#" id="btnSupport-alipay"><i class="glyphicon glyphicon-qrcode text-primary"></i><b>[支付宝支持一下]</b></a>
                     </li>
@@ -97,6 +98,8 @@
                         <a href="#" id="btnSupport-wechat"><i class="glyphicon glyphicon-qrcode text-success"></i><b>[ 微信 支持一下 ]</b></a>
                     </li>
                     <li role="separator" class="divider"></li>
+
+
                     <li>
                         <a href="#" id="btnResetPlugin"><i class="glyphicon glyphicon-exclamation-sign text-danger"></i>初始化插件信息</a>
                     </li>
@@ -110,6 +113,7 @@
                         <a href="#" id="btnDownload"><i class="glyphicon glyphicon-cloud-download"></i>下载</a>
                     </li> -->
                     <li role="separator" class="divider"></li>
+
 
                     <li>
                         <a href="#" id="btnAbout"><i class="glyphicon glyphicon-info-sign text-primary"></i>关于我们</a>
