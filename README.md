@@ -1,3 +1,5 @@
+项目主页：[http://aoxiaoqiang.com/HelloWorld/](http://aoxiaoqiang.com/HelloWorld/)
+
 ## Chrome Extension 基本信息
 
 1. [Chrome 网上应用店URL](https://chrome.google.com/webstore/detail/hello-world-proxy/bcllbnjmijlnlhiekkjhocliopkemkdd)

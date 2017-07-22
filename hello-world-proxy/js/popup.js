@@ -3,7 +3,7 @@ var proxy = new ChromeProxy();
 
 var customRules = getStorage('customRules') || [];
 
-$('#textVersion').text('V' + chrome.runtime.getManifest().version)
+$('#textVersion').text(' v' + chrome.runtime.getManifest().version)
 
 // 初始化数据
 $('#lineInfo').val(getStorage('lineInfo') || '')
