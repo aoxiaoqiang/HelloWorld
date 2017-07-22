@@ -1,8 +1,17 @@
 /* http://todc.github.com/todc-bootstrap/ */
 
+::-moz-selection{
+  background: #4a8bf4;
+  color: #fff;
+}
+
 ::selection{
   background: #4a8bf4;
   color: #fff;
+}
+
+.modal-body{
+  padding: 10px;
 }
 
 .btn,
@@ -126,41 +135,41 @@ body {
 
 /* 添加/移出当前URL */
 .op-current-url{
-	position: relative;
+  position: relative;
 }
 .op-current-url .icon-box{
-	position: absolute;
-	left: 0;
-	top: 0;
-	display: none;
-	height: 38px;
-	width: 38px;
-	text-align: center;
-	line-height: 42px;
-	font-size: 18px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  height: 38px;
+  width: 38px;
+  text-align: center;
+  line-height: 42px;
+  font-size: 18px;
 }
 
 /* made by */
 .made-by,
 .made-by a{
-	color: #CCC;
+  color: #CCC;
   font-weight: 100;
   font-size: 12px;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 .made-by{
-	margin-top: 20px;
-	height: 26px;
-	line-height: 26px;
+  margin-top: 20px;
+  height: 26px;
+  line-height: 26px;
 }
 .made-by a:hover{
-	color: #8a9fff;
+  color: #8a9fff;
 }
 
 /* debug-line  */
 .debug-line{
-	display: none;
+  display: none;
 }
 
 /* support */
@@ -171,4 +180,52 @@ body {
 .about-pay{
   color: #3078eb;
   cursor: pointer;
+}
+
+/* 冲突列表 */
+.modal-conflict{
+  background: #EEE;
+  overflow: hidden;
+  border: 1px solid #d4d4d4;
+}
+.conflict-title{
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  font-size: 14px;
+  border-bottom: 1px solid #d4d4d4;
+  box-shadow: 0 0px 10px #c7c7c7;
+}
+.conflict-cont{ }
+.conflict-info{
+  margin: 10px;
+  padding-bottom: 10px;
+  line-height: 140%;
+  font-size: 12px;
+  border-bottom: 1px solid #FFF;
+}
+.conflict-item{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  border-bottom: 1px solid #e2e2e2;
+  padding: 0 10px;
+}
+.conflict-item:last-child{
+  border: none;
+}
+.conflict-item .main-info{ }
+.conflict-item .main-info > img{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+.conflict-item .btns-box button{
+  margin-left: 5px;
 }

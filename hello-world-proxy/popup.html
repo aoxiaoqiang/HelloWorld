@@ -4,17 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Hello World Proxy</title>
+    <title>Hello World</title>
     <link rel="stylesheet" href="todcBootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="todcBootstrap/css/todc-bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-switch.css">
+    <link rel="stylesheet" href="css/hint.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <div class="page-container">
-        <span class="text-version text-left" id="textVersion">--</span>
-        <h3 class="text-center page-title">Hello world Proxy</h3>
+        <span class="text-version text-left">
+            <a href="https://github.com/aoxiaoqiang" class="openTabLink" tabindex="-1">
+                <i class="glyphicon glyphicon-info-sign text-primary"></i>
+            </a>
+            <strong id="textVersion"></strong>
+        </span>
+        <h3 class="text-center page-title">Hello World</h3>
         <!-- Modal -->
         <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog modal-sm" role="document">
@@ -33,7 +39,7 @@
         </div>
         <!-- input line -->
         <div class="item clearfix">
-            <h5><i class="glyphicon glyphicon-th"></i>添加/移除当前代理URL</h5>
+            <h5><i class="glyphicon glyphicon-th"></i>[添加/移除]当前URL</h5>
             <div class="op-current-url">
                 <div class="icons">
                     <div class="icon-box"><span class="glyphicon glyphicon-minus-sign text-danger"></span></div>
@@ -45,17 +51,17 @@
         </div>
         <!-- input line -->
         <div class="item clearfix">
-            <h5><i class="glyphicon glyphicon-th"></i>代理服务器地址</h5>
-            <input type="text" class="form-control input-lg inp-line-info" id="lineInfo" placeholder="请输入正确的代理地址" disabled>
+            <h5><i class="glyphicon glyphicon-th"></i>服务器地址</h5>
+            <input type="text" class="form-control input-lg inp-line-info" id="lineInfo" placeholder="请输入正确的服务器地址" disabled>
         </div>
         <!-- edit butotn -->
         <div class="item clearfix">
-            <h5><i class="glyphicon glyphicon-th"></i>编辑/保存代理服务器地址</h5>
+            <h5><i class="glyphicon glyphicon-th"></i>[编辑/保存]服务器信息</h5>
             <button class="btn btn-lg btn-block btn-primary" id="editLine">编辑线路信息</button>
         </div>
         <!-- switch -->
         <div class="item clearfix">
-            <h5><i class="glyphicon glyphicon-th"></i>代理状态</h5>
+            <h5><i class="glyphicon glyphicon-th"></i>连接状态</h5>
             <div class="switch-box">
                 <input type="checkbox" class="bootstrap-switch-mini bootstrap-switch" name="my-checkbox" data-on-text="已开启" data-off-text="已关闭" data-on-color="primary" data-off-color="danger" data-handle-width="95">
             </div>
@@ -72,7 +78,10 @@
                 <ul class="dropdown-menu dropdown-menu-right">
                     <li class="dropdown-header"></li>
                     <li>
-                        <a href="#" id="getInfo"><i class="glyphicon glyphicon-info-sign text-success"></i>当前代理服务器信息</a>
+                        <a href="#" id="btnOpenChromeExtensionDev"><i class="glyphicon glyphicon-fullscreen text-success"></i>Chrome扩展程序中心</a>
+                    </li>
+                    <li>
+                        <a href="#" id="getInfo"><i class="glyphicon glyphicon-info-sign text-success"></i>当前服务器信息</a>
                     </li>
                     <li>
                         <a href="#" id="getMoreLine"><i class="glyphicon glyphicon-circle-arrow-right text-success"></i>线路源1</a>
@@ -85,11 +94,11 @@
                         <a href="#" id="btnSupport-alipay"><i class="glyphicon glyphicon-qrcode text-primary"></i><b>[支付宝支持一下]</b></a>
                     </li>
                     <li>
-                        <a href="#" id="btnSupport-wechat"><i class="glyphicon glyphicon-qrcode text-primary"></i><b>[ 微信 支持一下 ]</b></a>
+                        <a href="#" id="btnSupport-wechat"><i class="glyphicon glyphicon-qrcode text-success"></i><b>[ 微信 支持一下 ]</b></a>
                     </li>
                     <li role="separator" class="divider"></li>
                     <li>
-                        <a href="#" id="btnResetPlugin"><i class="glyphicon glyphicon-exclamation-sign text-danger"></i>重置插件所有数据</a>
+                        <a href="#" id="btnResetPlugin"><i class="glyphicon glyphicon-exclamation-sign text-danger"></i>初始化插件信息</a>
                     </li>
                     <!-- <li>
                         <a href="#" id="btnDisabledPlugin"><i class="glyphicon glyphicon-warning-sign text-danger"></i>禁用插件</a>

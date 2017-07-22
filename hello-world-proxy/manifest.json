@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "background": {
     "persistent": true,
-    "scripts": ["./js/background.js"]
+    "scripts": ["./js/jquery.js", "./js/common.js", "./js/background.js"]
   },
   "browser_action": {
     "default_icon": "images/logo.png",
@@ -10,10 +10,10 @@
     "default_title": "Hello World Proxy"
   },
 
-  "name": "Hello World Proxy",
-  "short_name": "Hello World Proxy",
+  "name": "Hello World",
+  "short_name": "Hello World",
   "description": "知识无国界，科技改变生活！",
-  "version": "1.0.2",
+  "version": "1.0.3",
 
   "options_page": "popup.html",
 
