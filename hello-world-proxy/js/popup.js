@@ -102,7 +102,7 @@ function initURLstatus() {
         currentWindow: true,
         'active': true
     }, function(tabs) {
-        var domain = getDomain(tabs[0].url);
+        var domain = getDomain(`[0].url);
         if (domain == false) {
             $this.text('当前地址不可添加');
             $('.icon-box .glyphicon-ban-circle').parent().show();

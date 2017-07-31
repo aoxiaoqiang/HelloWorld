@@ -1,4 +1,11 @@
 {
     "isPay": true,
-    "forceUpdate": true
+    "forceUpdate": true,
+    "lines": [
+    {
+        "protocal": "https",
+        "url": "v.whatschats.com",
+        "port": 433,
+        "source": "https://chrome.google.com/webstore/detail/pp-vpn-free-unblock-secur/jljopmgdobloagejpohpldgkiellmfnc/reviews?utm_source=chrome-app-launcher-info-dialog"
+    }]
 }
