@@ -1,16 +1,16 @@
 /* http://todc.github.com/todc-bootstrap/ */
 
-::-moz-selection{
+::-moz-selection {
   background: #4a8bf4;
   color: #fff;
 }
 
-::selection{
+::selection {
   background: #4a8bf4;
   color: #fff;
 }
 
-.modal-body{
+.modal-body {
   padding: 10px;
 }
 
@@ -22,26 +22,31 @@ input,
   outline: none !important;
   border-radius: 0 !important;
 }
+
 button,
 .btn {
   cursor: pointer !important;
   -webkit-transition: all .2s !important;
   transition: all .2s !important;
 }
+
 h5 {
   font-weight: 100;
   font-size: 13px;
   color: #999;
 }
-h3{
+
+h3 {
   margin: 0;
   padding-top: 30px;
   padding-bottom: 20px;
   font-size: 20px;
 }
-h5 .glyphicon-th{
+
+h5 .glyphicon-th {
   padding-right: 2px;
 }
+
 body {
   margin: 0 auto;
   width: 280px;
@@ -49,25 +54,28 @@ body {
   padding-top: 10px;
   background: #f4f6ff;
 }
+
 .page-container {
   margin: 0 auto;
   width: 100%;
   position: relative;
 }
 
-
 /* 版本号 */
-.base-info-icon{
+
+.base-info-icon {
   font-size: 13px;
   color: #ababab;
   transition: all .3s;
   cursor: pointer;
 }
-.base-info-icon:hover{
+
+.base-info-icon:hover {
   text-decoration: none;
   color: #4d90fe;
 }
-.text-version{
+
+.text-version {
   position: absolute;
   top: 0;
   left: 0;
@@ -79,9 +87,8 @@ body {
   font-weight: 700
 }
 
-.page-title{
-  text-align: center;
-  // text-shadow: 1px 0 2px #4a8bf5;
+.page-title {
+  text-align: center; // text-shadow: 1px 0 2px #4a8bf5;
   // color: #FFF;
   color: #000;
   font-size: 24px;
@@ -90,10 +97,12 @@ body {
 .item {
   margin-bottom: 10px;
 }
+
 .field {
   font-weight: 700;
 }
-.field > span {
+
+.field>span {
   padding-right: 10px;
   display: inline-block;
   width: 100px;
@@ -111,6 +120,7 @@ body {
   right: 0;
   bottom: 0;
 }
+
 .group-auxiliary-box {
   position: absolute;
   right: 0;
@@ -122,31 +132,38 @@ body {
   font-weight: 700;
 }
 
+
 /*线路列表信息*/
+
 .line-box {
   padding: 10px 5px;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-bottom: 1px solid #EEE;
   font-weight: 700;
 }
+
 .line-box span {
   font-weight: 300;
 }
+
 .line-box:last-child {
   border-bottom: none;
 }
+
 .line-box p {
   margin: 0;
 }
 
 
 /* 添加/移出当前URL */
-.op-current-url{
+
+.op-current-url {
   position: relative;
 }
-.op-current-url .icon-box{
+
+.op-current-url .icon-box {
   position: absolute;
   left: 0;
   top: 0;
@@ -158,47 +175,59 @@ body {
   font-size: 18px;
 }
 
+
 /* made by */
+
 .made-by,
-.made-by a{
+.made-by a {
   color: #CCC;
   font-weight: 100;
   font-size: 12px;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
-.made-by{
+
+.made-by {
   margin-top: 20px;
   height: 26px;
   line-height: 26px;
 }
-.made-by a:hover{
+
+.made-by a:hover {
   color: #8a9fff;
 }
 
+
 /* debug-line  */
-.debug-line{
+
+.debug-line {
   display: none;
 }
 
+
 /* support */
-.pay-img{
+
+.pay-img {
   display: block;
   margin: 0 auto;
   width: 95%;
 }
-.about-pay{
+
+.about-pay {
   color: #3078eb;
   cursor: pointer;
 }
 
+
 /* 冲突列表 */
-.modal-conflict{
+
+.modal-conflict {
   background: #EEE;
   overflow: hidden;
   border: 1px solid #d4d4d4;
 }
-.conflict-title{
+
+.conflict-title {
   height: 40px;
   line-height: 40px;
   padding: 0;
@@ -206,48 +235,59 @@ body {
   border-bottom: 1px solid #d4d4d4;
   box-shadow: 0 0px 10px #c7c7c7;
 }
-.conflict-cont{ }
-.conflict-info{
+
+.conflict-cont {}
+
+.conflict-info {
   margin: 10px;
   padding-bottom: 10px;
   line-height: 140%;
   font-size: 12px;
   border-bottom: 1px solid #FFF;
 }
-.conflict-item{
+
+.conflict-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-between;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 60px;
   border-bottom: 1px solid #e2e2e2;
   padding: 0 10px;
 }
-.conflict-item:last-child{
+
+.conflict-item:last-child {
   border: none;
 }
-.conflict-item .main-info{ }
-.conflict-item .main-info > img{
+
+.conflict-item .main-info {}
+
+.conflict-item .main-info>img {
   display: inline-block;
   width: 40px;
   height: 40px;
 }
-.conflict-item .btns-box button{
+
+.conflict-item .btns-box button {
   margin-left: 5px;
 }
 
+
 /* 关于插件 */
+
 .modal-body,
-.author-say{
+.author-say {
   line-height: 180%;
 }
 
+
 /* debugger */
-.debugger{
+
+.debugger {
   position: absolute;
   right: 0;
   top: 0;
@@ -255,7 +295,8 @@ body {
   width: 20px;
   opacity: 0;
 }
-.debugger > label{
+
+.debugger>label {
   display: block;
   width: 100%;
   height: 100%;

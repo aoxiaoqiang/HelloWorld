@@ -7,7 +7,7 @@ ChromeProxy.prototype.set = function(url) {
   超级VPN ->  http://api.chrome.shicishe.com/vspn/vspn_get_list
   穹顶穿越 -> https://www.tianyantong.xyz/tyt/plug/plugUser/getUserLine
    */
-  $.get('../js/rules.json', function(res){
+  $.get('../js/rules.json', function(res) {
     var localRules = JSON.parse(res);
     var customRules = getStorage('customRules');
     var pacScriptStr = "var FindProxyForURL = function(url, host) {\
@@ -22,14 +22,14 @@ ChromeProxy.prototype.set = function(url) {
           if (dnsDomainIs(host, 'shicishe.com')) return D;\
           if (dnsDomainIs(host, 'tianyantong.xyz')) return D;";
     for (var i = 0; i < localRules.length; i++) {
-      pacScriptStr += "if (dnsDomainIs(host, '"+ localRules[i] +"')) return P;";
+      pacScriptStr += "if (dnsDomainIs(host, '" + localRules[i] + "')) return P;";
     }
 
     log(customRules);
     // customer
-    if(customRules && customRules.length > 0){
+    if (customRules && customRules.length > 0) {
       for (var i = 0; i < customRules.length; i++) {
-        pacScriptStr += "if (dnsDomainIs(host, '"+ customRules[i] +"')) return P;";
+        pacScriptStr += "if (dnsDomainIs(host, '" + customRules[i] + "')) return P;";
       }
     }
 
@@ -69,7 +69,7 @@ ChromeProxy.prototype.close = function(callback) {
   }, function() {
     grayIcon();
     log('closed');
-    if((typeof callback) === 'function'){
+    if ((typeof callback) === 'function') {
       callback();
     }
   });

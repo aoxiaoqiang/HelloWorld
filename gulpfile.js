@@ -1,16 +1,14 @@
-// npm install gulp gulp-uglify gulp-autoprefixer gulp-minify-css
-
-var gulp = require('gulp')
+let gulp = require('gulp')
 var uglify = require('gulp-uglify') // 压缩 JS
 var autoprefixer = require('gulp-autoprefixer') // 自动为CSS添加前缀
 var minifyCss = require('gulp-minify-css') // 压缩 CSS
 var htmlmin = require('gulp-htmlmin') // 压缩HTML
 
-var root = 'hello-world-proxy' // 当前根目录
-var targetDir = 'tag/1.0.4/hello-world-proxy-1.0.4' // 目标生成目录
+var root = 'src' // 当前根目录
+var targetDir = 'tag/1.0.5/hello-world-proxy-1.0.4' // 目标生成目录
 
 // CSS添加前缀/压缩
-gulp.task('css', function() {
+gulp.task ('css', function() {
   return gulp.src(root + '/css/*.css')
     .pipe(autoprefixer({
       browsers: ['last 2 versions', 'Android >= 4.0'],
@@ -28,7 +26,7 @@ gulp.task('js-compile', function() {
   return gulp.src(root + '/js/*.js')
     .pipe(uglify({
       output: {
-        ascii_only:true
+        ascii_only: true
       }
     }))
     .pipe(gulp.dest(targetDir + '/js'))
