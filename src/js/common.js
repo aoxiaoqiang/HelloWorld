@@ -4,16 +4,6 @@ var config_parm = {
 };
 
 /*
- * 控制台输出日志
- * @param {object} obj 输出对象
- */
-function log(obj) {
-    if (getStorage('debug') && getStorage('debug') == true) {
-        console.log(obj);
-    }
-}
-
-/*
  * 本地存储相关数据
  * @param {string} string 字段名
  * @param {object} value  值
@@ -115,12 +105,6 @@ function activeIcon() {
     });
 }
 
-
-// 屏蔽鼠标右键
-document.oncontextmenu = function() {
-    return false;
-}
-
 // 冲突插件检测
 var Conflictor = {
     // 获取所有冲突插件
@@ -182,4 +166,9 @@ function showConflicNumbers() {
         }
         showConflictTips(num);
     })
+}
+
+// 屏蔽鼠标右键
+document.oncontextmenu = function() {
+    return false;
 }

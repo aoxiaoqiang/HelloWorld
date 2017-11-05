@@ -1,12 +1,7 @@
-var ChromeProxy = function() {}
+function ChromeProxy() {}
 
 // 开启代理模式
 ChromeProxy.prototype.set = function(url) {
-  /*
-  外遇    ->  https://cdn.lubotv.com/list.js
-  超级VPN ->  http://api.chrome.shicishe.com/vspn/vspn_get_list
-  穹顶穿越 -> https://www.tianyantong.xyz/tyt/plug/plugUser/getUserLine
-   */
   $.get('../js/rules.json', function(res) {
     var localRules = JSON.parse(res);
     var customRules = getStorage('customRules');
@@ -25,7 +20,6 @@ ChromeProxy.prototype.set = function(url) {
       pacScriptStr += "if (dnsDomainIs(host, '" + localRules[i] + "')) return P;";
     }
 
-    log(customRules);
     // customer
     if (customRules && customRules.length > 0) {
       for (var i = 0; i < customRules.length; i++) {
@@ -36,7 +30,6 @@ ChromeProxy.prototype.set = function(url) {
     pacScriptStr += 'return D;';
     pacScriptStr += '}';
 
-    log(pacScriptStr)
     chrome.proxy.settings.set({
       value: {
         mode: "pac_script",
@@ -47,13 +40,8 @@ ChromeProxy.prototype.set = function(url) {
       scope: "regular"
     }, function() {
       activeIcon();
-      log('ok')
     })
   })
-
-
-
-
 };
 
 // 关闭代理
@@ -68,7 +56,6 @@ ChromeProxy.prototype.close = function(callback) {
     scope: 'regular'
   }, function() {
     grayIcon();
-    log('closed');
     if ((typeof callback) === 'function') {
       callback();
     }
